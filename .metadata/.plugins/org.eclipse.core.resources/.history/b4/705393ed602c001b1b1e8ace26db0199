@@ -1,0 +1,10 @@
+import java.util.*;
+import java.io.*;
+public class Nitin {
+	public static void main(String args[]) throws IOException
+	{
+		File data = new File("./nitin.dat");
+		Scanner Input = new Scanner(data);
+		
+	}
+}

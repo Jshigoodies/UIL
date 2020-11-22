@@ -1,0 +1,36 @@
+import java.io.File;
+
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
+
+import java.util.Scanner;
+
+import java.util.ArrayList;
+
+import java.text.DecimalFormat;
+
+import java.lang.Math;
+
+import java.io.*;
+import java.util.*;
+
+public class Maciej {
+	public static void main(String argsp[]) throws IOException
+	{
+		File data = new File("maciej.dat");
+		Scanner Input = new Scanner(data);
+		
+		int TestCases = Input.nextInt();
+		Input.nextLine();
+		
+		for(int num = 1; num<=TestCases; num++)
+		{
+			String first = Input.next();
+			String second = Input.next();
+			System.out.println(first +" "+ second);
+			
+		}
+		
+	}
+}

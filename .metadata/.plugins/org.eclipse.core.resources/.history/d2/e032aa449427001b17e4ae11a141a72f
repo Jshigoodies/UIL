@@ -1,0 +1,13 @@
+import java.util.*;
+import java.io.*;
+
+public class Teresa {
+	public static void main(String args[]) throws IOException
+	{
+		//Her experimental operation first sorts within the columns and then across the rows. <_< WHYYYY
+		File data = new File("./teresa.dat");
+		Scanner Input = new Scanner(data);
+		
+		
+	}
+}

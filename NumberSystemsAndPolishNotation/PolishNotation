@@ -1,0 +1,3 @@
+Infix: <operand><operator><operand>
+Prefix: <operator><operand><operand>
+Postfix: <operand><operand><operator>

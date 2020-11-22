@@ -1,0 +1,39 @@
+import java.util.*;
+import java.io.*;
+public class Nitin {
+	public static void main(String args[]) throws IOException
+	{
+		File data = new File("./nitin.dat");
+		Scanner Input = new Scanner(data);
+		
+		
+		Queue<String> dog = new LinkedList<String>();
+		Queue<String> cat = new LinkedList<String>();
+		
+		int numPets = Input.nextInt();
+		//put the pets in a queue array
+		for(int pets = 0; pets<numPets; pets++)
+		{
+			//System.out.println(Input.next() + " " + Input.next()); //just checking if this worked
+			String name = Input.next();
+			String type = Input.next();
+			
+			if(type == "D") //it's a dog
+			{
+				dog.add(name);
+			}
+			else //it's a cat then
+			{
+				cat.add(name);
+			}
+		}
+		
+		//now for the people
+		int people = Input.nextInt();
+		for(int p = 0; p<people; p++)
+		{
+			String name = Input.next();
+			String 
+		}
+	}
+}
