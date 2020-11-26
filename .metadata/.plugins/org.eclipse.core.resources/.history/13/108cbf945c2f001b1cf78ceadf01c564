@@ -1,0 +1,14 @@
+import javax.swing.JFrame;
+
+public class GUILearn {
+	public GUILearn()
+	{
+		JFrame frane = new JFrame();
+		JPanel panel = new JPanel();
+	}
+	
+	public static void main(String args[])
+	{
+		new GUILearn();
+	}
+}

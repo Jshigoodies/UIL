@@ -1,0 +1,20 @@
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class GUILearn {
+	public GUILearn()
+	{
+		JFrame frane = new JFrame();
+		JPanel panel = new JPanel();
+		panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); //top, bottom, left, right
+		panel.setLayout(new GridLayout(0, 1)); //rows and colums
+	}
+	
+	public static void main(String args[])
+	{
+		new GUILearn();
+	}
+}
