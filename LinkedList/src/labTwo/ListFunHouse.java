@@ -112,7 +112,12 @@ public class ListFunHouse
 			if(count == 1)
 			{
 				count = 0;
-				list.setNext(list.getNext().getNext()); 
+				ListNode obj = list;
+				for(int n = 0; n<x; n++)
+				{
+					obj = obj.getNext();
+				}
+				list.setNext(obj); 
 				//OK THIS IS BIG BRAIN, I set next the leading node before the node i need to delete 
 				//I first need to get the next object and then next object again (we can call "next next" object) and let it reference the "next next" object
 				//if the "next" object or "next next: object referenced is null, then it would be null either way.
