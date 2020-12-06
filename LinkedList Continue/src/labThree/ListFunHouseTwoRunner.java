@@ -52,6 +52,11 @@ public class ListFunHouseTwoRunner
 		funHouse.setXthNode(2,"one");		
 		out.println("\nList values after calling setXthNode(2,one)\n");										
 		System.out.println(funHouse);
-		out.println();				
+		out.println();
+		
+		funHouse.skipEveryOther();
+		System.out.println("\nSkip every two Values");
+		System.out.println(funHouse);
+		System.out.println();
 	}
 }
