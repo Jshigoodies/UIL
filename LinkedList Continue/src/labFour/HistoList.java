@@ -20,7 +20,7 @@ public class HistoList
 	public void addLetter(char let)
 	{
 		front = new HistoNode(let, 1, front);
-
+		
 
 
 
