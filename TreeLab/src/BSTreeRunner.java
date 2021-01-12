@@ -28,6 +28,8 @@ public class BSTreeRunner
  		
  		tree.revOrder();
  		
+ 		System.out.println("Number Of Leaves is " + tree.getNumLeaves());
+ 		System.out.println("Number of Nodes is " + tree.getNumNodes());
  
    }
 }

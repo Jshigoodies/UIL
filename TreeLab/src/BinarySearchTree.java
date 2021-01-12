@@ -141,7 +141,40 @@ public class BinarySearchTree
 
 	//add getNumLeaves, getWidth, getHeight, getNumNodes, and isFull
 
-
+	public int getNumLeaves() //again this feels really lazy or bad code, making a method so i can put an instance variable in there
+	{
+		return getNumLeaves(root);
+	}
+	private int getNumLeaves(TreeNode tree)
+	{
+		if(tree == null)
+			return 0; //what if there is no tree
+		else if(tree.getRight() == null && tree.getLeft() == null)
+		{
+			return 1; //what if the starting root is a leaf - node that has no children
+		}
+		else
+		{
+			return getNumLeaves(tree.getLeft()) + getNumLeaves(tree.getRight());
+		}
+			
+	}
+	
+	public int getNumNodes()
+	{
+		return getNumNodes(root);
+	}
+	private int getNumNodes(TreeNode tree)
+	{
+		if(tree == null)
+		{
+			return 0;
+		}
+		else
+		{
+			return getNumNodes(tree.getLeft()) + getNumNodes(tree.getRight()) + 1;
+		}
+	}
 
 
 
