@@ -175,15 +175,32 @@ public class BinarySearchTree
 			return getNumNodes(tree.getLeft()) + getNumNodes(tree.getRight()) + 1;
 		}
 	}
+	public int getWidth()
+	{
+		return getWidth(root);
+	}
 
-
-
-
-
-
-
-
-
+	private int getWidth(TreeNode tree)
+	{
+		if(tree == null)
+		{
+			return 0;
+		}
+		// +1 because it includes the root node that I didn't count
+		return 1+getNumLevels(tree.getRight()) + getNumLevels(tree.getLeft());
+	}
+	public int getHeight()
+	{
+		return getNumLevels()-1;
+	}
+	public String isFull()
+	{
+		if((Math.pow(2,getNumLevels())-1)==getNumNodes())
+		{
+			return "full";
+		}
+		return "not full";
+	}
 
 
 
@@ -223,11 +240,20 @@ public class BinarySearchTree
 
 	public String toString()
 	{
-		return "";
+		return "The Tree as a String " + toString(root);
 	}
 
 	private String toString(TreeNode tree)
 	{
-		return "";
+		if (tree != null)
+		{
+			return "" + toString(tree.getLeft()) + tree.getValue() + " " + toString(tree.getRight());
+		}
+		else
+		{
+			return "";
+		}
+		
+		
 	}
 }
