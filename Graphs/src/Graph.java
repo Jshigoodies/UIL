@@ -1,6 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-
 //Name -
 
 import java.util.Map;
@@ -14,35 +13,49 @@ public class Graph
 	public Graph(String line)
 	{
 		map = new TreeMap<String, String>();
-		String[] pairs = line.split("");
-		
-		for(int i = 0; i<pairs.length-1; i++)
+		String[] list = line.split(" ");
+		for(String piece : list)
 		{
-			String firstLet = pairs[i].substring(0,1);
-			String lastLet = pairs[i].substring(1);
+			String first = piece.substring(0,1);
+			String second = piece.substring(1,2);
 			
-			//now i have both pairs of letters that are directly related
-			//I have to see if there already existed a key for that
+			if(map.get(first)==null)
+				map.put(first, "");
+			if(map.get(second)==null)
+				map.put(second, "");
 			
-			
-			//if there isn't, I have to add it on to that string
-			//What i'm planning to do is have 1 (the key) letter contain all of the letters that are directly related to it
-			
-			
+			map.put(first, map.get(first)+second);
+			map.put(second, map.get(second)+first);
 		}
+		found = false;
 	}
 
 	public boolean contains(String letter)
 	{
+		if(map.get(letter)==null)
+	      return false;
 	   return true;
 	}
 
 	public void check(String first, String second, String placesUsed)
 	{
+		if(first.equals(second))
+		{
+			found = true;
+		}
+		else
+		{
+			String conList = map.get(first);
+			for(int i=0; i<conList.length(); i++)
+				if(placesUsed.indexOf(conList.substring(i, i+1))<0)
+					check(conList.substring(i, i+1), second, placesUsed+first);
+		}
 	}
 
 	public String toString()
 	{
-		return "";
+		if(found)
+		   return "CONNECTS";
+		return "DOES NOT CONNECT";
 	}
 }
