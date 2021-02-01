@@ -18,19 +18,52 @@ public class ShortestPathGraph
 
 	public ShortestPathGraph(String line)
 	{
+		shortest = Integer.MAX_VALUE;
+		map = new TreeMap<String, String>();
+		String[] list = line.split(" ");
+		for(String section : list)
+		{
+			String first = section.substring(0,1);
+			String second = section.substring(1,2);
+			
+			if(map.get(first)==null)
+				map.put(first, "");
+			if(map.get(second)==null)
+				map.put(second, "");
+				
+			map.put(first, map.get(first)+second);
+			map.put(second, map.get(second)+first);
+		}
+		found = false;
 	}
 
 	public boolean contains(String letter)
 	{
-		return true;
+		if(map.get(letter)==null)
+		      return false;
+		   return true;
 	}
 
 	public void check(String first, String second, String placesUsed, int steps)
 	{
+		if(first.equals(second)&&steps<shortest)
+		{
+			shortest = steps;
+			found = true;
+		}
+		else
+		{
+			String conList = map.get(first);
+			for(int i=0; i<conList.length(); i++)
+				if(placesUsed.indexOf(conList.substring(i, i+1))<0)
+					check(conList.substring(i, i+1), second, placesUsed+first, steps+1);
+		}
 	}
 
 	public String toString()
 	{
-		return "";
+		if(found) 
+			return "yes in " + shortest + " steps";
+		return "no";
 	}
 }
