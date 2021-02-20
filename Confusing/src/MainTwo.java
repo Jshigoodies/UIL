@@ -106,5 +106,42 @@ public class MainTwo {
 		System.out.println(Integer.toString(999999, 3)); //convert base 10 number into base 3
 		
 		
+		
+		
+		/*
+		 * Don't forget, when Arrays.sort( 'some string array') it sorts by ascii value
+		 * A = 65
+		 * a = 97
+		 */
+		
+		
+		
+		Alpha obj = new Alpha(); //duh
+		Alpha obj1 = new Beta("hiii");
+		Beta obj2 = new Beta("hi"); //duh
+		//Beta obj3 = new Alpha(); //wrong
+		
+		
+		
+		
+		//Boolean-Logic-And-Basic-Logic-Gates.png
+	}
+}
+
+class Alpha
+{
+	private String id;
+	public Alpha()
+	{
+		id = "Echo";
+	}
+}
+
+class Beta extends Alpha //think of it like this: Alpha branches off to Beta, so Alpha is the main tree trunk while Beta is the branch
+{
+	private String id;
+	public Beta(String _id)
+	{
+		id = _id;
 	}
 }

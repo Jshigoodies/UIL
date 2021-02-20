@@ -20,11 +20,11 @@ public class Main {
 		
 		//it adds it from the right
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("a");
-		list.add("b");
 		list.add("c");
+		list.add("b");
+		list.add("a");
 		
-		System.out.println(list.get(0));
+		System.out.println(list.get(0) + list.get(1) + list.get(2));
 		int[] array = new int[9];
 		int x = array.length;
 		

@@ -86,8 +86,14 @@ public class MainThree {
 		sList.add("d");
 		sList.add("b");
 		
-		System.out.println(sList+ " " + sList.remove("b") + "removed 'b' " + sList);
+		System.out.println(sList+ " " + sList.remove("b") + " removed 'b' " + sList);
 		
+		
+		
+		//Find the complement (flip the bits)
+		//complement is ~x = (-x) - 1. So flip the bits and subtract 1 
+		
+		System.out.println("S".compareTo("s"));
 		
 		
 	}
