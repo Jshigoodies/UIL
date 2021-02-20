@@ -1,6 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-
 //Name -
 
 import java.io.File;
@@ -15,39 +14,36 @@ import static java.lang.System.*;
 public class BiDirectionalGraph
 {
 	private TreeMap<String, TreeSet<String>> map;
-	private boolean found;
+	private boolean yahOrNay;
 
 	public BiDirectionalGraph(String line)
 	{
-		found = false;
-		map = new TreeMap<String, TreeSet<String>>(); //each key has a list of words/names
-		Scanner chopper = new Scanner(line);
+		map = new TreeMap<String, TreeSet<String>>();
+		Scanner chopper = new Scanner(line);		
 		while(chopper.hasNext())
 		{
 			String first = chopper.next();
 			String second = chopper.next();
-			
-			if(map.get(first) == null)
+
+			if(map.get(first)==null)
 			{
-				map.put(first,  new TreeSet<String>());
+				map.put(first, new TreeSet<String>());
 			}
 			map.get(first).add(second);
-			
-			if(map.get(second) == null)
+
+			if(map.get(second)==null)
 			{
 				map.put(second, new TreeSet<String>());
 			}
 			map.get(second).add(first);
-			
 		}
+		yahOrNay = false;
 	}
 
 	public boolean contains(String name)
 	{
-		if(map.get(name) == null)
-		{
+		if(map.get(name)==null)
 			return false;
-		}
 		return true;
 	}
 
@@ -55,20 +51,27 @@ public class BiDirectionalGraph
 	{
 		if(first.equals(second))
 		{
-			found = true;
+			yahOrNay = true;
 		}
 		else
 		{
 			TreeSet<String> conSet = map.get(first);
 			for(String name : conSet)
 			{
-				 
+				if(placedUsed.contains(name)==false)
+				{
+					placedUsed.add(name);
+				   check(name, second, placedUsed);
+					placedUsed.remove(name);
+				}
 			}
 		}
 	}
 
 	public String toString()
 	{
-		return "";
+		if(yahOrNay)
+		   return "CONNECTIION EXISTS";
+		return "NO CONNECTION EXISTS";
 	}
 }

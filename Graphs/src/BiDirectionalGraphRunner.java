@@ -1,6 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-
 //Name -
 
 import java.io.File;
@@ -13,23 +12,20 @@ public class BiDirectionalGraphRunner
 {
 	public static void main( String[] args ) throws IOException
 	{
-		Scanner input = new Scanner(new File("ibidgraph.dat"));
-		int cases = input.nextInt();
-		input.nextLine();
-		for(int i = 0; i < cases; i++)
+		Scanner file = new Scanner(new File("bidgraph.dat"));
+		int howManyTimes = file.nextInt();
+		file.nextLine();
+		for(int x=0; x<howManyTimes; x++)
 		{
-			BiDirectionalGraph test = new BiDirectionalGraph(input.nextLine());
-			String[] names = input.nextLine().split(" ");
-			
+			BiDirectionalGraph test = new BiDirectionalGraph(file.nextLine());
+			String[] names = file.nextLine().split(" ");
 			String start = names[0];
 			String stop = names[1];
-			
+
 			boolean chk = false;
-			
 			if(test.contains(start)&&test.contains(stop))
-			{
-				test.check(start,  stop,  new TreeSet<String>());
-			}
+			   test.check(start,stop,new TreeSet<String>());
+
 			System.out.println(test);
 		}
 	}
