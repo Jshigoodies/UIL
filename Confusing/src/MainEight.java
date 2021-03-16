@@ -37,5 +37,55 @@ public class MainEight {
 		 */
 		
 		
+		System.out.println("h".equals("h"));
+		System.out.println("h" == ("h"));
+		//Something to keep in mind
+        String s1 = new String("HELLO"); 
+        String s2 = new String("HELLO"); 
+        System.out.println(s1 == s2); //false
+        System.out.println(s1.equals(s2)); //true
+		
+        
+        @SuppressWarnings("deprecation")
+		Integer i = new Integer(1);
+        
+        System.out.println(i);
+        
+        
+        
+        
+        //https://www.w3schools.com/java/java_regex.asp   <----- regex
+        
+        //I don't understand the brackets part
+        
+        String s = "Any character";
+        System.out.println(s.matches(".*") + " Regex");
+        
+        
+        
+        
+        
+        
+        HI: for(int k = 0; k < 10; k ++)
+        {
+	        NAME: for(int j = 0; j<10; j++)
+	        {
+	        	System.out.println(j);
+	        	continue HI;
+	        	//System.out.println(j); //unreachable
+	        }
+        
+        }
+        
+        
+        
+        
+        
+        System.out.println((5^1));
+        
+        
+        System.out.printf("%d", 23423); //%d == decimal integer
+        //PriorityQueue organizes the list
+		
 	}
 }
