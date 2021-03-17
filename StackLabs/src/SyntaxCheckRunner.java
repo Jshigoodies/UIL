@@ -10,6 +10,8 @@ public class SyntaxCheckRunner
 {
 	public static void main ( String[] args )
 	{
-		//add test cases		
+		//add test cases
+		SyntaxChecker obj = new SyntaxChecker("{<html[value=4]*(12)>{$x}}");
+		System.out.println(obj + " is a " + obj.checkExpression() + " expression");
 	}
 }
